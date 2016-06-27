@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_bom_total_form">
+            <field name="name">mrp.bom.form</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='bom_lines']/tree/field[@name='product_qty']" position="replace">
+                     <field name="product_qty" sum="Total"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
+
